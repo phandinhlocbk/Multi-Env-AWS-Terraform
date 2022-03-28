@@ -89,7 +89,7 @@ resource "aws_route_table_association" "public_route_assoc" {
 resource "aws_route" "test_private_out" {
   route_table_id            = aws_route_table.test_private_rt.id
   destination_cidr_block    = "0.0.0.0/0"
-  gateway_id = var.test_nat_gateway_id # Nat #aws_internet_gateway.test_gw.id 
+  nat_gateway_id = var.test_nat_gateway_id # Nat #aws_internet_gateway.test_gw.id 
 }
 
 resource "aws_route_table_association" "private_route_assoc" {
